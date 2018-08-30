@@ -11,8 +11,6 @@ public class Funcionario {
 	private int nroDependentes;
 	private boolean insalubridade;
 	
-	public Funcionario() {}
-	
 	public Funcionario(int matricula, String nome, double salarioBase, 
             			int nroDependentes, boolean insalubridade) {
 		this.matricula = matricula;

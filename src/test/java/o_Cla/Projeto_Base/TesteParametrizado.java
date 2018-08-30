@@ -12,11 +12,11 @@ private Funcionario f;
  	
  	@ParameterizedTest
  	@CsvSource({
- 		"1711, Iguin, 6000, 5, true, 6900",
- 		"1351, Vazaee, 5000, 0, true, 5500",
- 		"4599, Lari, 5000, 0, false, 5000"
+ 		"1711, Iguin, 6000, 5, true, 6900, 5025",
+ 		"1351, Vazaee, 3000, 0, true, 3300, 2805",
+ 		"4599, Lari, 1800, 3, false, 1854, 1773"
  	})
- 	public void calculaSalarioBruto(int matricula, String nome,double salarioBase, int depend, boolean insalu, double resul) {
+ 	public void calculaSalarioBruto(int matricula, String nome,double salarioBase, int depend, boolean insalu, double salBruto, double salLiquido) {
  		f = new Funcionario(matricula, nome, salarioBase, depend, insalu);
  		
  		//Teste Getters
@@ -27,7 +27,10 @@ private Funcionario f;
  		assertEquals(insalu, f.getInsalubridade());
  		
  		//Teste método SalarioBruto
- 		assertEquals(resul, f.getSalarioBruto(), 0.01);
+ 		assertEquals(salBruto, f.getSalarioBruto(), 0.01);
+ 		
+ 		//Teste método SalarioLiquido
+ 		assertEquals(salLiquido, f.getSalarioLiquido(), 0.01);
  	}
 
 }
